@@ -3,7 +3,7 @@ export default {
   debug: true,
   devtool: "inline-source-map",
   nonInfo: false,
-  entry: [path.resolve(__dirname, "src")],
+  entry: [path.resolve(__dirname, "src/index")],
   target: "web",
   output: {
     path: path.resolve(__dirname, "src"),
