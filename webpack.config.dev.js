@@ -1,8 +1,8 @@
+import webpack from "webpack";
 import path from "path";
+
 export default {
-  debug: true,
   devtool: "inline-source-map",
-  nonInfo: false,
   entry: [path.resolve(__dirname, "src/index")],
   target: "web",
   output: {
@@ -10,11 +10,12 @@ export default {
     publicPath: "/",
     filename: "bundle.js"
   },
+  mode: "development",
   plugins: [],
-  modules: {
-    loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loaders: ["babel"] },
-      { test: /\.css$/, loaders: ["style", "css"] }
+  module: {
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, loaders: ["babel-loader"] },
+      { test: /\.css$/, loaders: ["style-loader", "css-loader"] }
     ]
   }
 };
